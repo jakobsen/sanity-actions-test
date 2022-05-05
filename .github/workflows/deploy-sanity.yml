@@ -13,7 +13,7 @@ jobs:
             run: npm ci
           - name: Install the Sanity CLI
             run: npm install -g @sanity/cli
-          -name: Deploy the studio
+          - name: Deploy the studio
             run: sanity deploy
             env:
               SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
