@@ -8,10 +8,10 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
-            - name: Install sanity global package
-              run: npm i -g sanity
+            - name: Install dependencies
+              run: npm ci
             - name: Deploy studio
-              run: sanity deploy
+              run: npm run deploy
               env:
                 SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
 
