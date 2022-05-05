@@ -7,7 +7,7 @@ export default {
   icon: Award,
   fields: [
     {
-      title: "Title",
+      title: "Tittel på merket",
       name: "title",
       type: "string",
     },
