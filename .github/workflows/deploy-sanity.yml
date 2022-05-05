@@ -1,0 +1,12 @@
+name: Deploy sanity
+on:
+    push:
+        branches: [main]
+jobs:
+    Explore-GitHub-Actions:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+            - run: npm i -g sanity
+            - run: sanity install && SANITY_AUTH_TOKEN=${{ secrets.SANITY_AUTH_TOKEN }} sanity deploy
