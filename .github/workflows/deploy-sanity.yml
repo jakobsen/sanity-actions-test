@@ -3,16 +3,15 @@ on:
     push:
         branches: [main]
 jobs:
-    Explore-GitHub-Actions:
+    Deploy Sanity:
         runs-on: ubuntu-latest
+        name: Deploy Sanity
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-            - name: Install dependencies
-              run: npm ci
-            - name: Deploy studio
-              run: npm run deploy
-              env:
-                SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
+          - uses: actions/checkout@v2
+          - uses: sanity-io/github-action-sanity@0.v2-alpha
+            env:
+              SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
+            with:
+              args: deploy
 
 
