@@ -5,7 +5,7 @@ on:
 jobs:
     Deploy Sanity:
         runs-on: ubuntu-latest
-        name: Deploy Sanity
+        name: Deploy-Sanity
         steps:
           - uses: actions/checkout@v2
           - uses: sanity-io/github-action-sanity@0.v2-alpha
